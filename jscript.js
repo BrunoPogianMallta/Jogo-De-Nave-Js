@@ -7,33 +7,30 @@ var frames;
 
 
 function teclaDw(){
-    let tecla=Event.keyCode;
-    if(tecla ==38)
-    {//cima
+    var tecla=event.keyCode;
+    if(tecla ==38){//cima
         diryJ=-1;
 
-    }
-    else if(tecla==40)//baixo
+    }else if(tecla==40){//baixo
         diryJ=1;
 
     }
-    if(tecla==37)
-    {
+    if(tecla==37){
         dirxJ=-1;
-    }
-    else if(tecla==39)
-    {//Direita
+    }else if(tecla==39){
         dirxJ=1;
     }
-    if(tecla==32)
-    {
+    if(tecla==32){
         //tiro
         atira(pjx+17,pjy);
-    }    
+    }
+}
+    
+        
+       
 
-function teclaUp()
-    {
-    var tecla=Event.keyCode;
+function teclaUp(){
+    var tecla=event.keyCode;
     if((tecla ==38)||(tecla==40))
     {
         diryJ=0;
@@ -46,7 +43,8 @@ function teclaUp()
 function atira(x,y){
     var t=document.createElement("div");
     var att1=document.createAttribute("class");
-    var att2=document.createAttribute("style");   
+    var att2=document.createAttribute("style");
+       
     att1.value="tiroJog";
     att2.value="top:"+y+"px;left"+x+"px";
     t.setAttributeNode(att1);
@@ -82,13 +80,13 @@ function inicia(){
     pjy=tamTelah/2;
     velJ=5;
     jog=document.getElementById("naveJog");
-    jog.style.top=pjy+"px";     
-    jog.style.left=pjx+"px";
+    jog.style.top=pjy +"px";     
+    jog.style.left=pjx +"px";
 
     gameLoop();
 
 }
 
-window.addEventListener("load",inicia);
-document.addEventListener("keydown",teclaDw);
-document.addEventListener("keyup",teclaUp); 
+    document.addEventListener("load",inicia);
+    document.addEventListener("keydown",teclaDw);
+    window.document.addEventListener("keyup",teclaUp); 
